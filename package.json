@@ -4,9 +4,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "test": "vitest"
+    "test": "node ./test-script.js"
   },
   "dependencies": {
+    "@uidotdev/usehooks": "^2.4.1",
+    "inquirer": "^9.2.12",
     "next": "latest",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
