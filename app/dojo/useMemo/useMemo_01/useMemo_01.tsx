@@ -1,12 +1,12 @@
-import { useMemo, useState } from "react";
-import RenderCounter from "../../../RenderCounter";
+import { useMemo, useState } from 'react';
+import RenderCounter from '../../../RenderCounter';
 
 type CounterProps = {
   id?: string;
   value: number;
 };
 
-const Counter = ({ value, id = "useMemo_#1_counter" }: CounterProps) => {
+const Counter = ({ value, id = 'useMemo_#1_counter' }: CounterProps) => {
   const memoizedCounterText = useMemo(() => {
     return `Counter: ${value} - ${id}`;
   }, [value, id]);

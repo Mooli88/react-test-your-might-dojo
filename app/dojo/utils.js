@@ -3,7 +3,7 @@ const expensiveOperation = (item) => {
   console.log(`Performing expensive operation for item: ${item}`);
 
   // Convert the string to an array of characters, sort them, and then join back to a string
-  const result = item.split("").sort().join("");
+  const result = item.split('').sort().join('');
 
   return result;
 };
@@ -21,7 +21,7 @@ const generateRandomCharacter = () => {
 
 // Generate a long string with a specified length
 const generateLongString = (length) => {
-  let longString = "";
+  let longString = '';
   for (let i = 0; i < length; i++) {
     longString += generateRandomCharacter();
   }

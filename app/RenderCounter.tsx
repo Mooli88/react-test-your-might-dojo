@@ -1,4 +1,4 @@
-import { useRenderCount } from "@uidotdev/usehooks";
+import { useRenderCount } from '@uidotdev/usehooks';
 
 type Props = {
   id: string;

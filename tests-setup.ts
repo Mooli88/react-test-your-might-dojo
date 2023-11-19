@@ -6,6 +6,5 @@ vi.mock("react", async (importOriginal) => {
 
   return {
     ...actual,
-    // useMemo: vi.fn().mockImplementation((fn) => fn()),
   };
 });

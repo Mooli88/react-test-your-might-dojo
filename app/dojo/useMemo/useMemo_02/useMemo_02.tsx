@@ -1,5 +1,5 @@
-import { useMemo, useState } from "react";
-import RenderCounter from "../../../RenderCounter";
+import { useMemo, useState } from 'react';
+import RenderCounter from '../../../RenderCounter';
 
 /**
  * In this code snippet, we have a UseMemoNo2 component that renders a QueueList component.
@@ -11,16 +11,20 @@ import RenderCounter from "../../../RenderCounter";
  *
  * The QueueList component has a useMemo hook that returns a list of queue numbers based on the items props.
  *
- * Do you think we need to use useMemo hook in this case?
- * If yes, why? (add comment down below)
+ * Tasks:
+ * 1. Change the code accordingly based on your useMemo understanding.
+ * 2. Run the tests and see that they are passing. (its ok to proceed if they are not)
+ * 3. Write down your thoughts on your solution in the comments below.
  *
- * Gotchas: 01
+ * Hint:
+ *  - Gotchas: 0
+ *  - Open to interpretation: true
  */
 
 type Queue = {
   id: string;
   value: number;
-  priority: "low" | "medium" | "high";
+  priority: 'low' | 'medium' | 'high';
 };
 
 type CounterProps = {
@@ -28,16 +32,16 @@ type CounterProps = {
   items: Queue[];
 };
 
-//////////////////////
-///// QueueList /////
-////////////////////
+// ////////////////////
+// /// QueueList /////
+// //////////////////
 
-const QueueList = ({ items, id = "useMemo_#2_queue-list" }: CounterProps) => {
+const QueueList = ({ items, id = 'useMemo_#2_queue-list' }: CounterProps) => {
   const memoizedQueueList = useMemo(() => {
     return items.map(
       ({ value, priority }) => `Queue No#${value}-priority-${priority}_${id}`
     );
-  }, [items.length, id]);
+  }, [items, id]);
 
   return (
     <div data-testid={id}>
@@ -51,9 +55,9 @@ const QueueList = ({ items, id = "useMemo_#2_queue-list" }: CounterProps) => {
   );
 };
 
-/////////////////////////
-////// UseMemoNo2 //////
-///////////////////////
+// ///////////////////////
+// //// UseMemoNo2 //////
+// /////////////////////
 
 export const UseMemoNo2 = () => {
   const [qList, setQList] = useState<Queue[]>([]);
@@ -65,12 +69,12 @@ export const UseMemoNo2 = () => {
         {
           id: `q_${q.length + 1}`,
           value: q.length + 1,
-          priority: "low",
+          priority: 'low',
         },
       ]);
   };
 
-  const changePriority = (id: string, priority: "low" | "medium" | "high") => {
+  const changePriority = (id: string, priority: 'low' | 'medium' | 'high') => {
     setQList((q) =>
       q.map((item) => {
         if (item?.id === id) {
@@ -87,7 +91,7 @@ export const UseMemoNo2 = () => {
   return (
     <div>
       <button onClick={addToQueue}>Add To Queue</button>
-      <button onClick={() => changePriority(`q_${1}`, "high")}>
+      <button onClick={() => changePriority(`q_${1}`, 'high')}>
         Change Queue item priority
       </button>
       <QueueList items={qList} />
@@ -98,7 +102,7 @@ export const UseMemoNo2 = () => {
 };
 
 /**
- * Write your answer here:
+ * Write the reason for your solution in here:
  *
  *
  *
