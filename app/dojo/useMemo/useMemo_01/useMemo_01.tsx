@@ -1,5 +1,4 @@
 import { useMemo, useState } from 'react'
-import RenderCounter from '../../../RenderCounter'
 
 type CounterProps = {
   id?: string
@@ -14,7 +13,6 @@ const Counter = ({ value, id = 'useMemo_#1_counter' }: CounterProps) => {
   return (
     <div data-testid={id}>
       <p>{memoizedCounterText}</p>
-      <RenderCounter id={id} />
     </div>
   )
 }

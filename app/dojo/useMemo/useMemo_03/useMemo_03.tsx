@@ -3,7 +3,7 @@ import RenderCounter from '../../../RenderCounter'
 import useInterval from '../../hooks/useInterval'
 
 /**
- * In this code snippet, UseMemoNo3 component renders the QueueList and Counter components.
+ * In this code snippet, UseMemoNo3 component renders the QueueList and Counter, and RenderCounter components.
  * Counter has same functionality as in exercise 1.
  * QueueList has functionality same as in exercise 2.
  *

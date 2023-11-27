@@ -1,6 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useMemo, useState } from 'react'
-import RenderCounter from '../../../RenderCounter'
 import useInterval from '../../hooks/useInterval'
 
 /**
@@ -50,7 +49,6 @@ const QueueList = ({ items, id = 'useMemo_#4_queue-list' }: QueueListProps) => {
           <li key={q}>{q}</li>
         ))}
       </ul>
-      <RenderCounter id={`${id}-render-counter`} />
     </div>
   )
 }
@@ -98,8 +96,6 @@ export const UseMemoNo4 = () => {
       <button onClick={addToQueue}>Add To Queue</button>
       <button onClick={() => changePriority(`q_${1}`, 'high')}>Change Queue item priority</button>
       <QueueList items={qList} />
-
-      <RenderCounter id='useMemo_#4-render-counter' />
     </div>
   )
 }

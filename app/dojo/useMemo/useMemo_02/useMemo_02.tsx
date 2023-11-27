@@ -2,8 +2,9 @@ import { useMemo, useState } from 'react'
 import RenderCounter from '../../../RenderCounter'
 
 /**
- * In this code snippet, UseMemoNo2 component renders a QueueList component.
+ * In this code snippet, UseMemoNo2 component renders QueueList and RenderCounter component.
  * The QueueList component receives a list of Queue items as props and renders them.
+ * The RenderCounter component renders the number of times it has been rendered.
  *
  * UseMemoNo2 component adds a new Queue item to the list of Queue item by pressing the "Add To Queue" button
  * The QueueList component has a useMemo hook that returns a list of queue numbers based on the items props.

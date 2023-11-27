@@ -11,17 +11,6 @@ test('UseMemo_04 should use useMemo hook', () => {
   expect(useMemoSpy).toHaveBeenCalled()
 })
 
-test('UseMemo_04 and children should have the same render count', () => {
-  render(<UseMemoNo4 />)
-
-  const addToQueueBtn = screen.getByRole('button', { name: 'Add To Queue' })
-  fireEvent.click(addToQueueBtn)
-  fireEvent.click(addToQueueBtn)
-
-  within(screen.getByTestId('useMemo_#4-render-counter')).getByText('render count - 3')
-  within(screen.getByTestId('useMemo_#4_queue-list-render-counter')).getByText('render count - 3')
-})
-
 test('Change queue item priority from "low" to "high"', async () => {
   render(<UseMemoNo4 />)
 
