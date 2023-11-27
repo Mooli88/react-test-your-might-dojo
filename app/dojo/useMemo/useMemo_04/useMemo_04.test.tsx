@@ -1,29 +1,29 @@
 import { fireEvent, render, screen, within } from '@testing-library/react'
 import { expect, test, vi } from 'vitest'
 import * as React from 'react'
-import { UseMemoNo2 } from './useMemo_02'
+import { UseMemoNo4 } from './useMemo_04'
 
-test('UseMemo_02 should NOT use useMemo hook', () => {
+test('UseMemo_04 should use useMemo hook', () => {
   const useMemoSpy = vi.spyOn(React, 'useMemo')
 
-  render(<UseMemoNo2 />)
+  render(<UseMemoNo4 />)
 
-  expect(useMemoSpy).not.toHaveBeenCalled()
+  expect(useMemoSpy).toHaveBeenCalled()
 })
 
-test('UseMemo_02 and children should have the same render count', () => {
-  render(<UseMemoNo2 />)
+test('UseMemo_04 and children should have the same render count', () => {
+  render(<UseMemoNo4 />)
 
   const addToQueueBtn = screen.getByRole('button', { name: 'Add To Queue' })
   fireEvent.click(addToQueueBtn)
   fireEvent.click(addToQueueBtn)
 
-  within(screen.getByTestId('useMemo_#2-render-counter')).getByText('render count - 3')
-  within(screen.getByTestId('useMemo_#2_queue-list-render-counter')).getByText('render count - 3')
+  within(screen.getByTestId('useMemo_#4-render-counter')).getByText('render count - 3')
+  within(screen.getByTestId('useMemo_#4_queue-list-render-counter')).getByText('render count - 3')
 })
 
 test('Change queue item priority from "low" to "high"', async () => {
-  render(<UseMemoNo2 />)
+  render(<UseMemoNo4 />)
 
   const addToQueueBtn = screen.getByRole('button', { name: 'Add To Queue' })
   const changeQueueItemPriorityBtn = screen.getByRole('button', {
@@ -37,11 +37,11 @@ test('Change queue item priority from "low" to "high"', async () => {
   })
   fireEvent.click(changeQueueItemPriorityBtn)
 
-  screen.getByText('Queue No#1-priority-high_useMemo_#2_queue-list')
+  screen.getByText('Queue No#1-priority-high_useMemo_#4_queue-list')
 })
 
-test('UseMemo_02 should produce a list of queue numbers on Add To Queue button click', () => {
-  render(<UseMemoNo2 />)
+test('UseMemo_04 should produce a list of queue numbers on Add To Queue button click', () => {
+  render(<UseMemoNo4 />)
 
   const addToQueueBtn = screen.getByRole('button', { name: 'Add To Queue' })
   const items = [1, 2, 3, 4, 5]
@@ -51,6 +51,6 @@ test('UseMemo_02 should produce a list of queue numbers on Add To Queue button c
   })
 
   items.forEach((q) => {
-    screen.getByText(`Queue No#${q}-priority-low_useMemo_#2_queue-list`)
+    screen.getByText(`Queue No#${q}-priority-low_useMemo_#4_queue-list`)
   })
 })

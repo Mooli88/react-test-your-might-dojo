@@ -1,22 +1,26 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useMemo, useState } from 'react'
 import RenderCounter from '../../../RenderCounter'
+import useInterval from '../../hooks/useInterval'
 
 /**
- * In this code snippet, UseMemoNo2 component renders a QueueList component.
- * The QueueList component receives a list of Queue items as props and renders them.
+ * In this code snippet, UseMemoNo4 component renders a QueueList component.
+ * The QueueList component receives a list of Queue items as props.
  *
- * UseMemoNo2 component adds a new Queue item to the list of Queue item by pressing the "Add To Queue" button
- * The QueueList component has a useMemo hook that returns a list of queue numbers based on the items props.
+ * UseMemoNo4 component has two buttons:
+ * - Add To Queue: adds a new Queue item to the list of Queue items.
+ * - Change Queue item priority: changes the priority of the first Queue item in the list.
+ *
+ * For this exercise, assume QueueList should use useMemo hook.
  *
  * Tasks:
  * 1. Change the code accordingly based on your useMemo understanding.
- * 2. Try to improve the performance outside by remove redundant code. (optional)
- * 3. Run the tests and check if they passing. (its ok to proceed if they are not)
- * 4. Explain your solution in the comments section below.
+ * 2. Run the tests and check if they passing. (its ok to proceed if they are not)
+ * 3. Explain your solution in the comments section below.
  *
  * Hint:
- *  - Gotchas: 0
- *  - Open to interpretation: true
+ *  - Gotchas: 1
+ *  - Open to interpretation: false
  */
 
 type Queue = {
@@ -34,10 +38,10 @@ type QueueListProps = {
   items: Queue[]
 }
 
-const QueueList = ({ items, id = 'useMemo_#2_queue-list' }: QueueListProps) => {
+const QueueList = ({ items, id = 'useMemo_#4_queue-list' }: QueueListProps) => {
   const memoizedQueueList = useMemo(() => {
     return items.map(({ value, priority }) => `Queue No#${value}-priority-${priority}_${id}`)
-  }, [items, id])
+  }, [items.length, id])
 
   return (
     <div data-testid={id}>
@@ -52,11 +56,16 @@ const QueueList = ({ items, id = 'useMemo_#2_queue-list' }: QueueListProps) => {
 }
 
 // ///////////////////////
-// //// UseMemoNo2 //////
+// //// UseMemoNo4 //////
 // /////////////////////
 
-export const UseMemoNo2 = () => {
+export const UseMemoNo4 = () => {
   const [qList, setQList] = useState<Queue[]>([])
+  const [, setPretendState] = useState({})
+
+  useInterval(() => {
+    setPretendState({})
+  }, 100)
 
   const addToQueue = () => {
     if (qList.length < 100)
@@ -90,7 +99,7 @@ export const UseMemoNo2 = () => {
       <button onClick={() => changePriority(`q_${1}`, 'high')}>Change Queue item priority</button>
       <QueueList items={qList} />
 
-      <RenderCounter id='useMemo_#2-render-counter' />
+      <RenderCounter id='useMemo_#4-render-counter' />
     </div>
   )
 }

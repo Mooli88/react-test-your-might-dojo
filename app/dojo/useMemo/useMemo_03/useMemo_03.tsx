@@ -2,6 +2,24 @@ import { useState } from 'react'
 import RenderCounter from '../../../RenderCounter'
 import useInterval from '../../hooks/useInterval'
 
+/**
+ * In this code snippet, UseMemoNo3 component renders the QueueList and Counter components.
+ * Counter has same functionality as in exercise 1.
+ * QueueList has functionality same as in exercise 2.
+ *
+ * UseMemoNo3 component has the same Add To Queue button as in exercise 2 and a new hook called
+ * useInterval. useInterval hook increments a counter every 100ms.
+ *
+ * Tasks:
+ * 1. Change the code accordingly based on your useMemo understanding.
+ * 2. Run the tests and check if they passing. (its ok to proceed if they are not)
+ * 3. Explain your solution in the comments section below.
+ *
+ * Hint:
+ *  - Gotchas: 0
+ *  - Open to interpretation: false (unless you really thinks otherwise :) )
+ */
+
 type Queue = {
   id: string
   value: number
@@ -18,13 +36,13 @@ type QueueListProps = {
 }
 
 export const QueueList = ({ items, id = 'useMemo_#3_queue-list' }: QueueListProps) => {
-  const list = items.map(({ value, priority }) => `Queue No#${value}-priority-${priority}_${id}`)
-
   return (
     <div data-testid={id}>
       <ul>
-        {list.map((q) => (
-          <li key={q}>{q}</li>
+        {items.map(({ value, priority }) => (
+          <li key={value}>
+            Queue No#{value}-priority-{priority}_{id}
+          </li>
         ))}
       </ul>
       <RenderCounter id={`${id}-render-counter`} />
