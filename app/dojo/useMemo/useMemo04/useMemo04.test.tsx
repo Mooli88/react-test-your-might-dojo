@@ -1,9 +1,9 @@
 import { fireEvent, render, screen, within } from '@testing-library/react'
 import { expect, test, vi } from 'vitest'
 import * as React from 'react'
-import { UseMemoNo4 } from './useMemo_04'
+import { UseMemoNo4 } from './useMemo04'
 
-test('UseMemo_04 should use useMemo hook', () => {
+test('UseMemo04 should use useMemo hook', () => {
   const useMemoSpy = vi.spyOn(React, 'useMemo')
 
   render(<UseMemoNo4 />)
@@ -29,7 +29,7 @@ test('Change queue item priority from "low" to "high"', async () => {
   screen.getByText('Queue No#1-priority-high_useMemo_#4_queue-list')
 })
 
-test('UseMemo_04 should produce a list of queue numbers on Add To Queue button click', () => {
+test('UseMemo04 should produce a list of queue numbers on Add To Queue button click', () => {
   render(<UseMemoNo4 />)
 
   const addToQueueBtn = screen.getByRole('button', { name: 'Add To Queue' })

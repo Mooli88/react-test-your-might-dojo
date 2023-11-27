@@ -2,10 +2,10 @@ const { execSync } = require('child_process')
 const readline = require('readline')
 
 const testPath = {
-  UseMemo01: './app/dojo/useMemo/useMemo_01/useMemo_01.test.tsx',
-  UseMemo02: './app/dojo/useMemo/useMemo_02/useMemo_02.test.tsx',
-  UseMemo03: './app/dojo/useMemo/useMemo_03/useMemo_03.test.tsx',
-  UseMemo04: './app/dojo/useMemo/useMemo_04/useMemo_04.test.tsx',
+  UseMemo01: './app/dojo/useMemo/useMemo01/useMemo01.test.tsx',
+  UseMemo02: './app/dojo/useMemo/useMemo02/useMemo02.test.tsx',
+  UseMemo03: './app/dojo/useMemo/useMemo03/useMemo03.test.tsx',
+  UseMemo04: './app/dojo/useMemo/useMemo04/useMemo04.test.tsx',
   UseCallback01: 'app/dojo/useCallback/UseCallbackNo1/UseCallbackNo1.test.tsx',
 }
 

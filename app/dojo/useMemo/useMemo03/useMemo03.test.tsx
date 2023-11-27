@@ -1,6 +1,6 @@
 import { act, fireEvent, render, screen, within } from '@testing-library/react'
 import { afterEach, beforeEach, expect, test, vi } from 'vitest'
-import { Counter, UseMemoNo3 } from './useMemo_03'
+import { Counter, UseMemoNo3 } from './useMemo03'
 import React from 'react'
 
 beforeEach(() => {
@@ -10,7 +10,7 @@ afterEach(() => {
   vi.restoreAllMocks()
 })
 
-test('UseMemo_03 should render on every state change', () => {
+test('UseMemo03 should render on every state change', () => {
   render(<UseMemoNo3 />)
 
   const addToQueueBtn = screen.getByRole('button', { name: 'Add To Queue' })
@@ -27,7 +27,7 @@ test('UseMemo_03 should render on every state change', () => {
   within(screen.getByTestId('useMemo_#3_queue-list-render-counter')).getByText('render count - 3')
 })
 
-test('UseMemo_03 QueueList should render on every state change of qList', () => {
+test('UseMemo03 QueueList should render on every state change of qList', () => {
   render(<UseMemoNo3 />)
 
   const addToQueueBtn = screen.getByRole('button', { name: 'Add To Queue' })
@@ -43,7 +43,7 @@ test('UseMemo_03 QueueList should render on every state change of qList', () => 
   within(screen.getByTestId('useMemo_#3_queue-list-render-counter')).getByText('render count - 3')
 })
 
-test('UseMemo_03 should produce a list of queue numbers on Add To Queue button click', () => {
+test('UseMemo03 should produce a list of queue numbers on Add To Queue button click', () => {
   render(<UseMemoNo3 />)
 
   const addToQueueBtn = screen.getByRole('button', { name: 'Add To Queue' })
@@ -58,7 +58,7 @@ test('UseMemo_03 should produce a list of queue numbers on Add To Queue button c
   })
 })
 
-test('UseMemo_03 Counter should NOT use useMemo hook', () => {
+test('UseMemo03 Counter should NOT use useMemo hook', () => {
   const useMemoSpy = vi.spyOn(React, 'useMemo')
 
   render(<Counter value={1} />)
@@ -66,7 +66,7 @@ test('UseMemo_03 Counter should NOT use useMemo hook', () => {
   expect(useMemoSpy).not.toHaveBeenCalled()
 })
 
-test('UseMemo_03 Counter should NOT use memo', () => {
+test('UseMemo03 Counter should NOT use memo', () => {
   render(<UseMemoNo3 />)
 
   const addToQueueBtn = screen.getByRole('button', { name: 'Add To Queue' })
