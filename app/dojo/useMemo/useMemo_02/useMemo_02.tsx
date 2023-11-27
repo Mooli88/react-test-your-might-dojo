@@ -1,5 +1,5 @@
-import { useMemo, useState } from 'react';
-import RenderCounter from '../../../RenderCounter';
+import { useMemo, useState } from 'react'
+import RenderCounter from '../../../RenderCounter'
 
 /**
  * In this code snippet, we have a UseMemoNo2 component that renders a QueueList component.
@@ -22,26 +22,24 @@ import RenderCounter from '../../../RenderCounter';
  */
 
 type Queue = {
-  id: string;
-  value: number;
-  priority: 'low' | 'medium' | 'high';
-};
-
-type CounterProps = {
-  id?: string;
-  items: Queue[];
-};
+  id: string
+  value: number
+  priority: 'low' | 'medium' | 'high'
+}
 
 // ////////////////////
 // /// QueueList /////
 // //////////////////
 
-const QueueList = ({ items, id = 'useMemo_#2_queue-list' }: CounterProps) => {
+type QueueListProps = {
+  id?: string
+  items: Queue[]
+}
+
+const QueueList = ({ items, id = 'useMemo_#2_queue-list' }: QueueListProps) => {
   const memoizedQueueList = useMemo(() => {
-    return items.map(
-      ({ value, priority }) => `Queue No#${value}-priority-${priority}_${id}`
-    );
-  }, [items, id]);
+    return items.map(({ value, priority }) => `Queue No#${value}-priority-${priority}_${id}`)
+  }, [items, id])
 
   return (
     <div data-testid={id}>
@@ -52,15 +50,15 @@ const QueueList = ({ items, id = 'useMemo_#2_queue-list' }: CounterProps) => {
       </ul>
       <RenderCounter id={`${id}-render-counter`} />
     </div>
-  );
-};
+  )
+}
 
 // ///////////////////////
 // //// UseMemoNo2 //////
 // /////////////////////
 
 export const UseMemoNo2 = () => {
-  const [qList, setQList] = useState<Queue[]>([]);
+  const [qList, setQList] = useState<Queue[]>([])
 
   const addToQueue = () => {
     if (qList.length < 100)
@@ -71,8 +69,8 @@ export const UseMemoNo2 = () => {
           value: q.length + 1,
           priority: 'low',
         },
-      ]);
-  };
+      ])
+  }
 
   const changePriority = (id: string, priority: 'low' | 'medium' | 'high') => {
     setQList((q) =>
@@ -81,25 +79,23 @@ export const UseMemoNo2 = () => {
           return {
             ...item,
             priority,
-          };
+          }
         }
-        return item;
-      })
-    );
-  };
+        return item
+      }),
+    )
+  }
 
   return (
     <div>
       <button onClick={addToQueue}>Add To Queue</button>
-      <button onClick={() => changePriority(`q_${1}`, 'high')}>
-        Change Queue item priority
-      </button>
+      <button onClick={() => changePriority(`q_${1}`, 'high')}>Change Queue item priority</button>
       <QueueList items={qList} />
 
-      <RenderCounter id="useMemo_#2-render-counter" />
+      <RenderCounter id='useMemo_#2-render-counter' />
     </div>
-  );
-};
+  )
+}
 
 /**
  * Write the reason for your solution in here:

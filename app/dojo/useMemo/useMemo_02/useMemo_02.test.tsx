@@ -27,7 +27,7 @@ test('UseMemo_02 and children should have the same render count', () => {
   within(screen.getByTestId('useMemo_#2_queue-list-render-counter')).getByText('render count - 3')
 })
 
-test('Change queue item priority from \'low\' to \'high\' ', async () => {
+test('Change queue item priority from "low" to "high"', async () => {
   render(<UseMemoNo2 />)
 
   const addToQueueBtn = screen.getByRole('button', { name: 'Add To Queue' })
