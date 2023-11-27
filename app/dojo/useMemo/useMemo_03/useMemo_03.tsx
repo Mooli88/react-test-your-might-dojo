@@ -41,7 +41,7 @@ type CounterProps = {
   value: number
 }
 
-const Counter = ({ value, id = 'useMemo_#3_counter' }: CounterProps) => {
+export const Counter = ({ value, id = 'useMemo_#3_counter' }: CounterProps) => {
   const counterText = `Counter: ${value} - ${id}`
 
   return (
