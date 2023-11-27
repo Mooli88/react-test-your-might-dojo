@@ -4,7 +4,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "test": "node ./test-script.js",
+    "test": "vitest",
+    "test:script": "node ./test-script.js",
     "lint": "eslint ./app/**/*.{js,ts,tsx}",
     "lint:fix": "eslint --fix 'app/**/*.{js,ts,tsx}'"
   },
