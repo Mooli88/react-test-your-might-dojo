@@ -15,8 +15,9 @@ import useInterval from '../../hooks/useInterval'
  * 2. Run the tests and check if they passing. (its ok to proceed if they are not)
  * 3. Explain your solution in the comments section below.
  *
+ * Bonus: Suggest at least 2 solutions and pick the best one
+ *
  * Hint:
- *  - Gotchas: 0
  *  - Open to interpretation: false (unless you really thinks otherwise :) )
  */
 

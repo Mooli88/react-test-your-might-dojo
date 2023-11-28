@@ -16,7 +16,6 @@ import RenderCounter from '../../../RenderCounter'
  * 4. Explain your solution in the comments section below.
  *
  * Hint:
- *  - Gotchas: 0
  *  - Open to interpretation: true
  */
 

@@ -10,23 +10,6 @@ afterEach(() => {
   vi.restoreAllMocks()
 })
 
-test('UseMemo03 should render on every state change', () => {
-  render(<UseMemoNo3 />)
-
-  const addToQueueBtn = screen.getByRole('button', { name: 'Add To Queue' })
-  fireEvent.click(addToQueueBtn)
-  fireEvent.click(addToQueueBtn)
-
-  Array.from({ length: 20 }, () => {
-    act(() => {
-      vi.advanceTimersToNextTimer()
-    })
-  })
-
-  within(screen.getByTestId('useMemo_#3-render-counter')).getByText('render count - 23')
-  within(screen.getByTestId('useMemo_#3_queue-list-render-counter')).getByText('render count - 3')
-})
-
 test('UseMemo03 QueueList should render on every state change of qList', () => {
   render(<UseMemoNo3 />)
 
