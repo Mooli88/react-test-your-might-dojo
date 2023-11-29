@@ -1,5 +1,17 @@
 import { useMemo, useState } from 'react'
 
+/**
+ * In this code snippet, UseMemoNo1 component renders the Counter component.
+ * The Counter component receives a value prop, add text to it and renders it.
+ *
+ * UseMemoNo1 component increment count by pressing the "Increment" button.
+ *
+ * Tasks:
+ * 1. Change the code accordingly based on your useMemo understanding.
+ * 3. Run the tests and check if they passing.
+ * 4. Explain your solution in the comments section below.
+ */
+
 type CounterProps = {
   id?: string
   value: number
@@ -27,3 +39,12 @@ export const UseMemoNo1 = () => {
     </div>
   )
 }
+
+/**
+ * Write the reason for your solution in here:
+ *
+ *
+ *
+ *
+ *
+ */
