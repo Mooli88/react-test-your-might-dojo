@@ -1,5 +1,4 @@
-import React, { useState } from 'react'
-import songsData from './songs.json'
+import { useState } from 'react'
 
 type Song = {
   id: string
