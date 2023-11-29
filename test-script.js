@@ -2,11 +2,16 @@ const { execSync } = require('child_process')
 const readline = require('readline')
 
 const testPath = {
-  UseMemo01: './app/dojo/useMemo/useMemo01/useMemo01.test.tsx',
-  UseMemo02: './app/dojo/useMemo/useMemo02/useMemo02.test.tsx',
-  UseMemo03: './app/dojo/useMemo/useMemo03/useMemo03.test.tsx',
-  UseMemo04: './app/dojo/useMemo/useMemo04/useMemo04.test.tsx',
-  UseCallback01: 'app/dojo/useCallback/UseCallbackNo1/UseCallbackNo1.test.tsx',
+  UseMemo01: './app/dojo/Memoization/useMemo01/useMemo01.test.tsx',
+  UseMemo02: './app/dojo/Memoization/useMemo02/useMemo02.test.tsx',
+  UseMemo03: './app/dojo/Memoization/useMemo03/useMemo03.test.tsx',
+  UseMemo04: './app/dojo/Memoization/useMemo04/useMemo04.test.tsx',
+  UseCallback01: 'app/dojo/Memoization/useCallback/UseCallbackNo1.test.tsx',
+  InitialPropValues: 'app/dojo/InitialPropValues/InitialPropValues.test.tsx',
+  CleanupSideEffectOnUnmount:
+    'app/dojo/CleanupSideEffectOnUnmount/CleanupSideEffectOnUnmount.test.tsx',
+  SongList: 'app/dojo/Reconciliation/SongList/SongList.test.tsx',
+  SwapOrder: 'app/dojo/Reconciliation/SwapOrder/SwapOrder.test.tsx',
 }
 
 // Define a list of React component names
