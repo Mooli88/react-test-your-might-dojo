@@ -70,24 +70,9 @@ export const UseMemoNo2 = () => {
       ])
   }
 
-  const changePriority = (id: string, priority: 'low' | 'medium' | 'high') => {
-    setQList((q) =>
-      q.map((item) => {
-        if (item?.id === id) {
-          return {
-            ...item,
-            priority,
-          }
-        }
-        return item
-      }),
-    )
-  }
-
   return (
     <div>
       <button onClick={addToQueue}>Add To Queue</button>
-      <button onClick={() => changePriority(`q_${1}`, 'high')}>Change Queue item priority</button>
       <QueueList items={qList} />
 
       <RenderCounter id='useMemo_#2-render-counter' />

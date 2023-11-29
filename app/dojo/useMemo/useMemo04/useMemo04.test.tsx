@@ -1,6 +1,6 @@
-import { fireEvent, render, screen, within } from '@testing-library/react'
-import { expect, test, vi } from 'vitest'
+import { fireEvent, render, screen } from '@testing-library/react'
 import * as React from 'react'
+import { expect, test, vi } from 'vitest'
 import { UseMemoNo4 } from './useMemo04'
 
 test('UseMemo04 should use useMemo hook', () => {

@@ -22,24 +22,6 @@ test('UseMemo02 and children should have the same render count', () => {
   within(screen.getByTestId('useMemo_#2_queue-list-render-counter')).getByText('render count - 3')
 })
 
-test('Change queue item priority from "low" to "high"', async () => {
-  render(<UseMemoNo2 />)
-
-  const addToQueueBtn = screen.getByRole('button', { name: 'Add To Queue' })
-  const changeQueueItemPriorityBtn = screen.getByRole('button', {
-    name: 'Change Queue item priority',
-  })
-
-  const items = [1, 2, 3]
-
-  items.forEach(() => {
-    fireEvent.click(addToQueueBtn)
-  })
-  fireEvent.click(changeQueueItemPriorityBtn)
-
-  screen.getByText('Queue No#1-priority-high_useMemo_#2_queue-list')
-})
-
 test('UseMemo02 should produce a list of queue numbers on Add To Queue button click', () => {
   render(<UseMemoNo2 />)
 
