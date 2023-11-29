@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useMemo, useState } from 'react'
-import useInterval from '../../hooks/useInterval'
+import useInterval from '../../../hooks/useInterval'
 
 /**
  * In this code snippet, UseMemoNo4 component renders a QueueList component.

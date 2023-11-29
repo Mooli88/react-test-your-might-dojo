@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import RenderCounter from '../../../RenderCounter'
-import useInterval from '../../hooks/useInterval'
+import useInterval from '../../../hooks/useInterval'
 
 /**
  * In this code snippet, UseMemoNo3 component renders the QueueList and Counter, and RenderCounter components.
