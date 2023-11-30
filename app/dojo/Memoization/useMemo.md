@@ -1,5 +1,9 @@
 # useMemo
 
+**Its recommended to only run the test when you think you got the answer as the tests will revel the solution.**
+
+Some of the solutions to the challenges in this section are not definitive (I left comments to make it clear), so feel free to change the test condition or skip it based on your approach.
+
 ### Purpose
 
 `useMemo` is used for memoization, a technique to optimize expensive calculations or operations by caching their results.
