@@ -12,7 +12,7 @@ type Props = {
   songs: Song[]
 }
 
-const SongList = ({ songs }: Props) => {
+const Playlist = ({ songs }: Props) => {
   const [shuffledSongs, setShuffledSongs] = useState<Song[]>(songs)
 
   const shuffleSongs = (): void => {
@@ -43,4 +43,4 @@ const SongList = ({ songs }: Props) => {
   )
 }
 
-export default SongList
+export default Playlist
