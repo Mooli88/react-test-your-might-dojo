@@ -21,7 +21,6 @@ test('shuffle song list and track changes correctly', async () => {
 
   within(songNumOne).getByLabelText('Rating:')
   within(songNumOne).getByDisplayValue('10') // Rating should be 10
-  screen.debug(songNumOne)
 
   const shuffleButton = screen.getByText('Shuffle Songs')
 
