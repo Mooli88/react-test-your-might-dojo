@@ -1,5 +1,9 @@
-import { useState } from 'react'
+import { CSSProperties, useState } from 'react'
 
+const style: CSSProperties = {
+  display: 'flex',
+  flexDirection: 'column',
+}
 const SwapOrder = () => {
   const [reverse, setReverse] = useState(false)
   const checkbox = (
@@ -8,24 +12,28 @@ const SwapOrder = () => {
       Reverse order
     </label>
   )
-  if (!reverse) {
-    return (
-      <form>
-        <Field label='Last name' />
-        <Field label='First name' />
-        {checkbox}
-      </form>
-    )
-  } else {
-    return (
-      <form>
-        <Field label='First name' />
-        <Field label='Last name' />
-        {checkbox}
-      </form>
-    )
-  }
+
+  return reverse ? (
+    <Container>
+      <Field label='Last name' />
+      <Field label='First name' />
+      {checkbox}
+    </Container>
+  ) : (
+    <Container>
+      <Field label='First name' />
+      <Field label='Last name' />
+      {checkbox}
+    </Container>
+  )
 }
+
+const Container = ({ children }: { children: React.ReactNode }) => (
+  <div style={style}>
+    <pre>Reproduce bug: Change field value and reverse</pre>
+    {children}
+  </div>
+)
 
 type Props = {
   label: string

@@ -13,13 +13,13 @@ test('renders playlist', async () => {
 })
 
 // TODO: Fix code to make this test pass
-test('shuffle playlist and track changes correctly', async () => {
+test('shuffle playlist and track changes correctly', () => {
   render(<Playlist songs={songsData} />)
 
   const playlist = screen.getByRole('list')
   let songNumOne = within(playlist).getByText('#01 - The Less I Know The Better')
 
-  within(songNumOne).getByLabelText('Rating:')
+  within(songNumOne).getByLabelText('⭐️')
   within(songNumOne).getByDisplayValue('10') // Rating should be 10
 
   const shuffleButton = screen.getByText('Shuffle Songs')
@@ -28,6 +28,6 @@ test('shuffle playlist and track changes correctly', async () => {
 
   songNumOne = within(playlist).getByText('#01 - The Less I Know The Better')
 
-  // Song position in the list changed but rating should still be 10
+  // The song position in the list changed but rating should still be 10
   within(songNumOne).getByDisplayValue('10')
 })

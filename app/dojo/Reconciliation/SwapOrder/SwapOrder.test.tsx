@@ -20,14 +20,14 @@ test('reverse fields on check Reverse order', async () => {
   expect(screen.getAllByRole('textbox')).toMatchInlineSnapshot(`
     [
       <input
-        placeholder="Last name"
-        type="text"
-        value="Doe"
-      />,
-      <input
         placeholder="First name"
         type="text"
         value="John"
+      />,
+      <input
+        placeholder="Last name"
+        type="text"
+        value="Doe"
       />,
     ]
   `)
@@ -39,14 +39,14 @@ test('reverse fields on check Reverse order', async () => {
   expect(screen.getAllByRole('textbox')).toMatchInlineSnapshot(`
     [
       <input
-        placeholder="First name"
-        type="text"
-        value="John"
-      />,
-      <input
         placeholder="Last name"
         type="text"
         value="Doe"
+      />,
+      <input
+        placeholder="First name"
+        type="text"
+        value="John"
       />,
     ]
   `)
