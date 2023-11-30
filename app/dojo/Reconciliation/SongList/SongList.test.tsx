@@ -19,20 +19,16 @@ test('shuffle song list and track changes correctly', async () => {
   const songList = screen.getByRole('list')
   let songNumOne = within(songList).getByText('#01 - The Less I Know The Better')
 
-  let songNumOneRating = within(songNumOne).getByRole<HTMLInputElement>('spinbutton', {
-    name: 'Rating:',
-  })
-
-  expect(songNumOneRating.value).toBe('10')
+  within(songNumOne).getByLabelText('Rating:')
+  within(songNumOne).getByDisplayValue('10') // Rating should be 10
+  screen.debug(songNumOne)
 
   const shuffleButton = screen.getByText('Shuffle Songs')
 
   fireEvent.click(shuffleButton)
 
   songNumOne = within(songList).getByText('#01 - The Less I Know The Better')
-  songNumOneRating = within(songNumOne).getByRole<HTMLInputElement>('spinbutton', {
-    name: 'Rating:',
-  })
 
-  expect(songNumOneRating.value).toBe('10')
+  // Song position in the list changed but rating should still be 10
+  within(songNumOne).getByDisplayValue('10')
 })
