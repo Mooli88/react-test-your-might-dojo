@@ -10,8 +10,9 @@ const testPath = {
   InitialPropValues: 'app/dojo/InitialPropValues/InitialPropValues.test.tsx',
   CleanupSideEffectOnUnmount:
     'app/dojo/CleanupSideEffectOnUnmount/CleanupSideEffectOnUnmount.test.tsx',
-  SongList: 'app/dojo/Reconciliation/SongList/SongList.test.tsx',
+  Playlist: 'app/dojo/Reconciliation/Playlist/Playlist.test.tsx',
   SwapOrder: 'app/dojo/Reconciliation/SwapOrder/SwapOrder.test.tsx',
+  ContactManager: 'app/dojo/Reconciliation/ContactManager/ContactManager.test.tsx',
 }
 
 // Define a list of React component names
